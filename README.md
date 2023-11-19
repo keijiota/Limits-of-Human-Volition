@@ -1,8 +1,8 @@
-### Limits-of-Human-Volition
+# Limits-of-Human-Volition
 This GitHub repository shares the analyses codes which generated the figures in the following articule
 - Ota, K., Charles, L., & Haggard, P. (2023). Autonomous behaviour and the limits of human volition. Cognition.
   
-# analysis codes
+### analysis codes
 I assume that the programming codes will be run in the following order. 
   1. Figure2CD.m
   2. Figure3DEF_SupplFig1.m
@@ -13,7 +13,7 @@ I assume that the programming codes will be run in the following order.
   7. fit_models.m
   8. Figure5D_SupplFig2.m
 
-# data frame
+### data frame
 A Matlab file 'data_structure.mat' is the data frame for participants' responses (N=152). 
 Some important variables are 
   dat.nTr (5*152): the 1st row is always zero
