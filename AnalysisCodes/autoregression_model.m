@@ -1,7 +1,7 @@
 clear; close all;
-
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
 
 %%
 nSeq = 10; nPast = 60;

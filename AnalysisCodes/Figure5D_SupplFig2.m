@@ -1,7 +1,9 @@
 clear; close all;
 
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+% this code requires you to install SPM12: https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
 
 %%
 load data_fit_models;
@@ -90,6 +92,11 @@ for j = 1:2
 end
 
 %% Figure 5D
+aicc_biasrand = [prm_bias{1}(:,7) prm_bias{2}(:,7) prm_bias{3}(:,7) prm_bias{4}(:,7)];
+aicc_rl = [prm_rl{1}(:,7) prm_rl{2}(:,7) prm_rl{3}(:,7) prm_rl{4}(:,7)];
+aicc_1bl = [prm_1bl{1}(:,7) prm_1bl{2}(:,7) prm_1bl{3}(:,7) prm_1bl{4}(:,7)];
+aicc_2bl = [prm_2bl{1}(:,7) prm_2bl{2}(:,7) prm_2bl{3}(:,7) prm_2bl{4}(:,7)];
+
 T = [];
 for ib = 1:4
     AICCs = [aicc_biasrand(:,ib) aicc_rl(:,ib) aicc_1bl(:,ib) aicc_2bl(:,ib)];
@@ -133,43 +140,8 @@ end
 
 myfigAI2(10.5,0.04,900,175);
 
-
 %% Supplementary Figure 2
 
-figure; ii = 0;
-prm = prm_2bl;
-for j = 1:3
-    if j == 1        
-        Prm = [prm{1}(:,1) prm{2}(:,1) prm{3}(:,1) prm{4}(:,1)]; % alpha
-        yl = 'Learning rate';
-        bin = 0:0.1:1; xt = 0:0.2:1;
-    elseif j == 2
-        Prm = [prm{1}(:,2) prm{2}(:,2) prm{3}(:,2) prm{4}(:,2)]; % uncertainty
-        yl = 'Stochasticity';
-        bin = 0:2:20; xt = 0:4:20;
-    elseif j == 3
-        Prm = [prm{1}(:,3) prm{2}(:,3) prm{3}(:,3) prm{4}(:,3)]; % preference
-        yl = 'Temporal discouting';
-        bin = 0:0.025:0.2; xt = 0:0.05:0.2;
-    end
-    c1 = [.75 .75 .75; 1 0.85 0; 1 0.2 0; 0.65 0 0];
-    lw = 0.75; wd = 0.7; xl = {'BL','B1','B2','B3'}; x1 = 1:4;
-
-    for ib = 1:4
-        ii = ii+1; subplot(3,4,ii); hold on
-%         histogram(prm(:,ib),bin,'FaceColor',c1(ib,:),'FaceAlpha',0.1);
-        histogram(Prm(:,ib),bin,'FaceColor',c1(ib,:));
-        ylim([0 110]); yticks(0:25:150); xticks(xt);
-        if ib == 1
-%             ylabel(yl);
-        end
-        myfigAI([],[],9);
-    end
-end
-myfigAI(1000,700,9);
-
-%% 
-close all 
 figure; ii = 0;
 for model = 1:4 
     if model == 1 

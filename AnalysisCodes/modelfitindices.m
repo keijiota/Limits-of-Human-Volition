@@ -1,3 +1,7 @@
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
 function [fitindx] = modelfitindices(maxLL,n,k)
 
 fitindx.aic  = -2*maxLL + 2*k;

@@ -1,5 +1,6 @@
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
 
 % this is the code for maxmising the log-likelihood of the data given model parameters 
 % this code requires to install BADS package on your machine. 

@@ -1,6 +1,7 @@
 clear; close all;
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
 
 %% loading data
 load('data_structure');
@@ -10,8 +11,11 @@ subN = size(dat.wt,1); c = 1:3; C = 3;
 mtx = [];    
 for ib = 2:4 % exclude the baseline block
 for subi = 1:subN
-        str = dat.nTr(ib,subi)+1; etr = dat.nTr(ib+1,subi);
+        str = dat.nTr(ib,subi)+1; % the trial number of the beggining of each block
+        etr = dat.nTr(ib+1,subi); % the trial number of the end of each block
         data = [dat.wtbin{subi}(str:etr), dat.bet{subi}(str:etr), dat.point2{subi}(str:etr)];
+        % [wtbin: a chosen interval of wait time, bet: a chocsen wait time interval by a virtual opponent, point2: -1 for loss, 0 for win]
+        
         data(:,3) = data(:,3)+1; len = length(data);
         if ib == 1
             data(15,2) = 3; data(16,2) = 2; 

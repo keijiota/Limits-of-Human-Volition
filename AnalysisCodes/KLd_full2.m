@@ -1,3 +1,7 @@
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
 function [d_kl_full] = KLd_full2(CPwl,Phistory,CP,C)
 d_kl_full = 0;
 if size(CPwl,3)==1

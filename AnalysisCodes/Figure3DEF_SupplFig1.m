@@ -1,4 +1,8 @@
 clear; close all;
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
 
 %% loading data
 

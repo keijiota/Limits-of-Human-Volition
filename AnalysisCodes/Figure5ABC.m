@@ -1,11 +1,13 @@
-
 clear; close all;
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
 
 %% 
 load autoreg_model_prm.mat
-T13 = readtable('clmm_autoreg_data_b1-3.xlsx'); % this is the output of regression analysis on R code
+T13 = readtable('clmm_autoreg_data_b1-3.xlsx');
+% this is the output of lagged regression analysis on R code
 nlag = 5;
 
 %% Figure 5A&B

@@ -1,6 +1,8 @@
 clear; close all;
-% Credit: Keiji Ota (email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk)
-% Date: 2023-11-18 (version 1)
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
 % this code requires to install BADS package on your machine. 
 % Bayesian adaptive direct search (BADS): https://github.com/acerbilab/bads
 
@@ -21,8 +23,11 @@ ison = 1; nrep = 20;
 if ison == 1
     for subi = 1:subN
         for ib = 1:2
-            str = dat.nTr(ib,subi)+1; etr = dat.nTr(ib+1,subi);
+            str = dat.nTr(ib,subi)+1; % the trial number of the beggining of each block
+            etr = dat.nTr(ib+1,subi); % the trial number of the end of each block
             data = [dat.wtbin{subi}(str:etr), dat.bet{subi}(str:etr), dat.point2{subi}(str:etr)];
+            % [wtbin: a chosen interval of wait time, bet: a chocsen wait time interval by a virtual opponent, point2: -1 for loss, 0 for win]
+            
             data(:,3) = data(:,3)+1; len = length(data);
            
             Q_RL = [.5 .5 .5]; Q_1BL = -[.5 .5 .5]; Q_2BL = -[.5 .5 .5];  Qinit = [Q_RL; Q_1BL; Q_2BL];

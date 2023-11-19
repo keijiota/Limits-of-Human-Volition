@@ -1,5 +1,9 @@
 clear; close all;
 
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
 %%
 load('data_structure');
 subN = size(dat.wt,1); C = 3; q = [1/3 1/3 1/3]; 

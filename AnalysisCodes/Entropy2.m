@@ -1,3 +1,8 @@
+% Copyright (C) Keiji Ota 2023
+% Email: k.ota@ucl.ac.uk or k.ota@qmul.ac.uk
+% Edited: 2023-11-18 
+
+
 function [P, CP, Phistory, entropy2, maxentropy2] = Entropy2(dat,c)
 % conditional probability, entropy of c^2
 
