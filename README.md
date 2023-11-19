@@ -1,5 +1,5 @@
 # Limits-of-Human-Volition
-This GitHub repository shares the analyses codes which generated the figures in the following articule
+This GitHub repository shares the analyses codes which generated the figures in the following article
 - Ota, K., Charles, L., & Haggard, P. (2023). Autonomous behaviour and the limits of human volition. Cognition.
   
 ### analysis codes
